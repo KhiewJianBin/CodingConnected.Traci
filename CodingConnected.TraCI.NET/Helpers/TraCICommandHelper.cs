@@ -242,10 +242,10 @@ namespace CodingConnected.TraCI.NET.Helpers
                         bytes.AddRange(TraCIDataConverter.GetTraCIBytesFromTrafficLightPhaseList(tlpl));
                         break;
                     case Color c:
-#warning missing code
-                        throw new NotImplementedException();
+                        bytes.Add(TraCIConstants.TYPE_COLOR);
+                        bytes.AddRange(TraCIDataConverter.GetTraCIBytesFromColor(c));
                         break;
-            } }
+                } }
 
             var command = new TraCICommand
             {

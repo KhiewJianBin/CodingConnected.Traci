@@ -666,6 +666,16 @@ namespace CodingConnected.TraCI.NET.Helpers
             return bytes.ToArray();
         }
 
+        internal static byte[] GetTraCIBytesFromColor(Color c)
+        {
+            var bytes = new List<byte>();
+            bytes.Add(c.A);
+            bytes.Add(c.B);
+            bytes.Add(c.G);
+            bytes.Add(c.R);
+            return bytes.ToArray();
+        }
+
         internal static int GetValueFromTypeAndArray(byte type, IEnumerable<byte> array, out object Object)
         {
             switch (type)
